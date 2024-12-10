@@ -19,12 +19,15 @@ module.exports = function (app) {
     let result = convertHandler.convert(num, unit);
     let returnNum = convertHandler.getNum(result);
 
-    if (result === 'invalid unit') {
-      res.json({ string: 'invalid unit' });
-    } else if (result === 'invalid number') {
-      res.json({ string: 'invalid number' });
-    } else if (result === 'invalid number and unit') {
-      res.json({ string: 'invalid number and unit' });
+    if (num === 'invalid number' && unit === 'invalid unit') {
+      res.type('text').send('invalid number and unit');
+      return;
+    } else if (num === 'invalid number') {
+      res.type('text').send('invalid number');
+      return;
+    } else if (unit === 'invalid unit') {
+      res.type('text').send('invalid unit');
+      return;
     } else {
       res.json({
         initNum: num,

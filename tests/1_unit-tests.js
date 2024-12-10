@@ -58,7 +58,7 @@ suite('Unit Tests', function () {
     // convertHandler should correctly convert gal to L.
     test('convertHandler should correctly convert gal to L.', () => {
         let output = convertHandler.convert(1, 'gal');
-        assert.equal(output, '3.78541l', 'Expected to convert 1gal to 3.78541l');
+        assert.equal(output, '3.78541L', 'Expected to convert 1gal to 3.78541L');
     });
     // convertHandler should correctly convert L to gal.
     test('convertHandler should correctly convert L to gal.', () => {
